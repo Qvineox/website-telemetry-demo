@@ -1,19 +1,22 @@
 package app
 
 import (
-	"github.com/a-h/templ"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"net"
+	"net/http"
 	"strings"
 	"time"
+	"website-telemetry-demo/api"
+	"website-telemetry-demo/cmd/app/middlewares"
 	"website-telemetry-demo/configs"
-	"website-telemetry-demo/web/templates"
 )
 
 func StartApp(config configs.StaticConfig) {
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.New()
+
+	router = api.HandleAPI(router)
 
 	router.Use(cors.New(cors.Config{
 		AllowOrigins: strings.Split(config.AllowedOrigins, ","),
@@ -37,8 +40,31 @@ func StartApp(config configs.StaticConfig) {
 		MaxAge:           12 * time.Hour,
 	}))
 
-	router.GET("/", func(context *gin.Context) {
-		templ.Handler(templates.Index(time.Now())).ServeHTTP(context.Writer, context.Request)
+	router.Static("/icons", "web/icons")
+	router.Static("/styles", "web/styles")
+	router.Static("/scripts", "web/scripts")
+
+	router.LoadHTMLGlob("web/templates/*")
+
+	router.GET("/login", func(c *gin.Context) {
+		c.SetCookie("user_auth_token", "", -1, "/", "", true, true) // remove cookie
+
+		c.HTML(http.StatusOK, "login.tmpl", gin.H{
+			"title": "Main website",
+		})
+	})
+
+	group := router.Group("/", middlewares.RequireAuth())
+	group.GET("/", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.tmpl", gin.H{
+			"title": "Main website",
+		})
+	})
+
+	group.GET("/home", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.tmpl", gin.H{
+			"title": "Main website",
+		})
 	})
 
 	err := router.Run(net.JoinHostPort(config.Host, config.Port))

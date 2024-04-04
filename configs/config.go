@@ -36,5 +36,4 @@ func NewStaticConfig() (StaticConfig, error) {
 
 	slog.Info("static configuration loaded")
 	return cfg, nil
-
 }
