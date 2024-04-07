@@ -1,0 +1,63 @@
+version: '3.9'
+
+name: telemetry_demo
+
+networks:
+  internal:
+    external: false
+  web:
+    external: true
+
+services:
+  database:
+    image: postgres:16.1-alpine
+    container_name: telemetry_demo_database
+    hostname: telemetry_demo_database
+    restart: unless-stopped
+    stop_grace_period: 30s
+    environment:
+      - POSTGRES_DB=$DB_NAME
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASS
+      - PGPORT=5432
+    networks:
+      - internal
+    expose:
+      - 5432
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "${$DB_NAME}", "-U", "${$DB_USER}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  api:
+    image: $IMAGE_TAG
+    container_name: telemetry_demo_web
+    hostname: telemetry_demo_web
+    restart: unless-stopped
+    environment:
+      db_host: telemetry_demo_database
+      db_port: 5432
+      db_user: $DB_USER
+      db_pass: $DB_PASS
+      db_name: $DB_NAME
+      db_timezone: $DB_TZ
+
+      http_host: 0.0.0.0
+      http_port: 80
+
+      http_security_tls: $HTTP_SECURITY_TLS
+      http_security_origins: $HTTP_SECURITY_ORIGINS
+      http_security_domain: $HTTP_SECURITY_DOMAIN
+    networks:
+      - web
+      - internal
+    volumes:
+      - $CI_PROJECT_DIR/tls:/tls
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.telemetry_demo.service=telemetry_demo
+      - traefik.http.routers.telemetry_demo.rule=Host(`$TRAEFIK_HOST`) && PathPrefix(`/$TRAEFIK_PATH`))
+      - traefik.http.routers.telemetry_demo.tls=true
+      - traefik.http.routers.telemetry_demo.entrypoints=websec
+      - traefik.http.services.telemetry_demo.loadbalancer.server.port=80

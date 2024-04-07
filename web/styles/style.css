@@ -22,3 +22,28 @@ h1 {
 main {
     padding: 5px 10px;
 }
+
+ul.lesson-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        padding: 2px 4px;
+
+        h3, p {
+            margin: 0;
+        }
+
+        border: 1px solid black;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{{ define "lessonCard" }}
+
+<li class="lesson-card" id="lesson-card__{{ .ID }}">
+    <h3>#{{ .ID }}. {{ .Name }}</h3>
+    <p>{{ .Description }}</p>
+</li>
+<script>
+    card = document.querySelector("li#lesson-card__{{ .ID }}")
+
+    card.addEventListener("click", () => monitor.sendMonitoringEvent(
+        "li#lesson-card__{{ .ID }}",
+        "clicked lesson ID#{{ .ID }}",
+        "click"
+    ))
+</script>
+
+{{ end }}

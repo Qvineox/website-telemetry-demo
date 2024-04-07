@@ -1,7 +1,13 @@
 package api
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
+	"log/slog"
+	"net/http"
+	"time"
+	"website-telemetry-demo/api/middlewares"
 )
 
 func HandleAPI(router *gin.Engine) *gin.Engine {
@@ -16,20 +22,59 @@ func HandleAPI(router *gin.Engine) *gin.Engine {
 
 		err := c.ShouldBindJSON(&payload)
 		if err != nil {
-			c.JSON(401, gin.H{"message": err.Error()})
-			return
-		} else if len(payload.Username) == 0 || len(payload.Password) == 0 {
-			c.JSON(401, gin.H{"message": "username or password are empty"})
+			c.JSON(http.StatusUnauthorized, gin.H{"message": err.Error()})
 			return
 		}
 
-		c.SetCookie("user_auth_token", "user_cookie_value", 86400, "/", "", true, true)
+		sessionUUID := uuid.New()
+
+		c.SetCookie("user_session_token", sessionUUID.String(), 86400, "/", "", true, true)
+		c.SetCookie("user_name", payload.Username, 86400, "/", "", true, true)
+	})
+
+	api.POST("/logout", func(c *gin.Context) {
+		c.SetCookie("user_session_token", "", -1, "/", "", true, true)
+
+		c.Redirect(http.StatusFound, "/login")
+		c.Abort()
+	}, middlewares.RequireAuth())
+
+	monitoringGroup := api.Group("/monitoring", middlewares.RequireAuth())
+	monitoringGroup.POST("/event", func(c *gin.Context) {
+		var payload eventPayload
+
+		err := c.ShouldBindJSON(&payload)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+			return
+		}
+
+		payload.Timestamp = time.Now()
+		payload.SessionUUID = c.GetString("user_session_token")
+		payload.Username = c.GetString("user_name")
+
+		slog.Info(fmt.Sprintf("registered event: %s", payload.String()))
 	})
 
 	return router
 }
 
 type authPayload struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
+	Username string `json:"username" binding:"required"`
+	Password string `json:"password" binding:"required"`
+}
+
+type eventPayload struct {
+	Element   string `json:"element" binding:"required"`
+	EventType string `json:"event_type" binding:"required"`
+	Message   string `json:"message" binding:"required"`
+
+	// evaluated on the backend
+	SessionUUID string    `json:"-"`
+	Username    string    `json:"-"`
+	Timestamp   time.Time `json:"-"`
+}
+
+func (payload *eventPayload) String() string {
+	return fmt.Sprintf("session: %s, message: %s", payload.SessionUUID, payload.Message)
 }

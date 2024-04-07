@@ -17,7 +17,7 @@ include:
     - docker
   only:
     refs:
-        - main
+      - main
 
 build docker image:
   stage: build
@@ -53,7 +53,7 @@ trivy image scan:
     TRIVY_CACHE_DIR: ".trivycache/"
     #    TRIVY_INSECURE: "true"
 
-    FULL_IMAGE_NAME: "$CI_REGISTRY_IMAGE/domain_threat_intel:$CI_COMMIT_REF_SLUG"
+    FULL_IMAGE_NAME: "$CI_REGISTRY_IMAGE/website_telemetry:$CI_COMMIT_REF_SLUG"
   script:
     # подготовка trivy: очистка кэша, обновление базы данных уязвимостей
     - trivy --version
@@ -96,13 +96,11 @@ deploy to production:
   needs:
     - build production docker image
   environment:
-    name: Production
+    name: Development
     url: https://telemetry-dev.qvineox.ru
   script:
-    - mkdir $CI_PROJECT_DIR/tls
-    - cp $TLS_CRT $CI_PROJECT_DIR/tls/cert.crt
     - docker pull $IMAGE_TAG
-    - docker compose -f build/docker/docker-compose.production.yml up -d
+    - docker compose -f build/docker/docker-compose.yml up -d
   tags:
     - shell
   only:

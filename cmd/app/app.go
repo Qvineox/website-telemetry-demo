@@ -8,12 +8,13 @@ import (
 	"strings"
 	"time"
 	"website-telemetry-demo/api"
-	"website-telemetry-demo/cmd/app/middlewares"
+	"website-telemetry-demo/api/middlewares"
+	"website-telemetry-demo/cmd/app/entities"
 	"website-telemetry-demo/configs"
 )
 
 func StartApp(config configs.StaticConfig) {
-	gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.DebugMode)
 	router := gin.New()
 
 	router = api.HandleAPI(router)
@@ -47,7 +48,7 @@ func StartApp(config configs.StaticConfig) {
 	router.LoadHTMLGlob("web/templates/*")
 
 	router.GET("/login", func(c *gin.Context) {
-		c.SetCookie("user_auth_token", "", -1, "/", "", true, true) // remove cookie
+		c.SetCookie("user_session_token", "", -1, "/", "", true, true) // remove cookie
 
 		c.HTML(http.StatusOK, "login.tmpl", gin.H{
 			"title": "Main website",
@@ -57,13 +58,8 @@ func StartApp(config configs.StaticConfig) {
 	group := router.Group("/", middlewares.RequireAuth())
 	group.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{
-			"title": "Main website",
-		})
-	})
-
-	group.GET("/home", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl", gin.H{
-			"title": "Main website",
+			"title":   "Main website",
+			"lessons": [][]entities.Lesson{entities.GoLessons, entities.PythonLessons},
 		})
 	})
 

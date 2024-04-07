@@ -26,10 +26,17 @@
             <input id="password-input" type="password">
         </label>
     </div>
-    <button onclick="auth()" id="auth-button">
+    <button id="auth-button">
         Авторизоваться
     </button>
 </main>
 <script src="../scripts/index.js"></script>
+<script>
+    const button = document.querySelector("button#auth-button");
+
+    button.addEventListener("click", () => {
+        login()
+    })
+</script>
 </body>
 </html>
