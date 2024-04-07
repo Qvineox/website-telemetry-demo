@@ -12,12 +12,16 @@
     <link rel="icon" href="../icons/favicon.ico" type="image/x-icon">
 </head>
 <body>
-{{ template "navigationBar" "home" }}
+{{ template "navigationBar" "materials" }}
 <header>
-    <h1>Домашняя страница</h1>
+    <h1>Доступные обучающие курсы</h1>
 </header>
 <main>
-
+    <ul class="lesson-group">
+        {{range .lessons}}
+        {{ template "lessonCard" . }}
+        {{end}}
+    </ul>
 </main>
 <script src="../scripts/index.js"></script>
 </body>

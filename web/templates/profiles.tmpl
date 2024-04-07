@@ -12,13 +12,27 @@
     <link rel="icon" href="../icons/favicon.ico" type="image/x-icon">
 </head>
 <body>
-{{ template "navigationBar" "home" }}
+{{ template "navigationBar" "profiles" }}
 <header>
-    <h1>Домашняя страница</h1>
+    <h1>Профиль</h1>
 </header>
 <main>
-
+    <label for="logout-button">
+        <button id="logout-button">
+            Выйти
+        </button>
+        <script type="text/javascript">
+            document.write(`Текущий пользователь: ${sessionStorage.getItem("username")}`)
+        </script>
+    </label>
 </main>
 <script src="../scripts/index.js"></script>
+<script>
+    const logoutButton = document.querySelector("button#logout-button")
+
+    logoutButton.addEventListener("click", () => {
+        logout()
+    })
+</script>
 </body>
 </html>

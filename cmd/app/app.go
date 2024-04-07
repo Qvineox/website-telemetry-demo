@@ -8,6 +8,7 @@ import (
 	"gorm.io/gorm"
 	"net"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 	"website-telemetry-demo/api"
@@ -23,7 +24,10 @@ func StartApp(config configs.StaticConfig) {
 
 	db := prepareDatabaseConnection(config.Database.Host, config.Database.User, config.Database.Password, config.Database.Name, config.Database.Timezone)
 
-	router = api.HandleAPI(router, repo.NewEventsRepo(db))
+	eRepo := repo.NewEventsRepo(db)
+	lRepo := repo.NewLessonsRepo(db)
+
+	router = api.HandleAPI(router, eRepo, lRepo)
 
 	router.Use(cors.New(cors.Config{
 		AllowOrigins: strings.Split(config.AllowedOrigins, ","),
@@ -63,10 +67,40 @@ func StartApp(config configs.StaticConfig) {
 
 	group := router.Group("/", middlewares.RequireAuth())
 	group.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl", gin.H{
-			"title":   "Main website",
-			"lessons": [][]entities.Lesson{entities.GoLessons, entities.PythonLessons},
+		c.HTML(http.StatusOK, "index.tmpl", gin.H{})
+	})
+
+	group.GET("/materials", func(c *gin.Context) {
+		lessons, err := lRepo.GetAllLessons()
+		if err != nil {
+			c.Status(http.StatusInternalServerError)
+			return
+		}
+
+		c.HTML(http.StatusOK, "lessons.tmpl", gin.H{
+			"lessons": lessons,
 		})
+	})
+
+	group.GET("/materials/:id", func(c *gin.Context) {
+		param := c.Param("id")
+		id, err := strconv.ParseUint(param, 10, 64)
+		if err != nil {
+			c.Status(http.StatusBadRequest)
+			return
+		}
+
+		lesson, err := lRepo.GetLessonByID(id)
+		if err != nil {
+			c.Status(http.StatusInternalServerError)
+			return
+		}
+
+		c.HTML(http.StatusOK, "lesson.tmpl", lesson)
+	})
+
+	group.GET("/profiles", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "profiles.tmpl", gin.H{})
 	})
 
 	err := router.Run(net.JoinHostPort(config.Host, config.Port))
@@ -82,7 +116,7 @@ func prepareDatabaseConnection(host, user, password, name, timezone string) *gor
 		panic("failed to connect database")
 	}
 
-	err = db.AutoMigrate(&entities.Lesson{}, &entities.Event{})
+	err = db.AutoMigrate(&entities.Comment{}, &entities.Lesson{}, &entities.Event{})
 	if err != nil {
 		panic("failed to migrate schema")
 	}

@@ -1,0 +1,80 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная страница</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="../icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+{{ template "navigationBar" "lesson" }}
+<header>
+    <h1>Урок '{{ .Name }}'</h1>
+</header>
+<main>
+    <p><b>Описание: </b> {{ .Description }}</p>
+    <hr>
+    <p>
+        <b>Понравилось: {{ .Likes }}</b>
+        <button id="like-btn" style="background-color: lightgreen">Like</button>
+    </p>
+    <p>
+        <b>Не понравилось: {{ .Dislikes }}</b>
+        <button id="dislike-btn" style="background-color: lightcoral">Dislike</button>
+    </p>
+    <hr>
+    <p><b>Комментарии</b>
+        <button id="comment-btn">Написать комментарий</button>
+    </p>
+    <ul class="comments">
+        {{ range .Comments }}
+        <li class="comment">
+            <p><b>{{ .Author }}</b></p>
+            <p>{{ .Text }}</p>
+        </li>
+        {{ end }}
+    </ul>
+</main>
+<script src="../scripts/index.js"></script>
+<script src="../scripts/lessons.js"></script>
+<script>
+    like = document.querySelector("button#like-btn")
+    like.addEventListener("click", () => {
+        monitor.sendMonitoringEvent(
+            "button#like-btn",
+            "clicked like button on lesson {{ .ID }}",
+            "click"
+        )
+
+        likeLesson("{{ .ID }}")
+    })
+
+    dislike = document.querySelector("button#dislike-btn")
+    dislike.addEventListener("click", () => {
+        monitor.sendMonitoringEvent(
+            "button#dislike-btn",
+            "clicked dislike button on lesson {{ .ID }}",
+            "click"
+        )
+
+        dislikeLesson("{{ .ID }}")
+    })
+
+    comment = document.querySelector("button#comment-btn")
+    comment.addEventListener("click", () => {
+        monitor.sendMonitoringEvent(
+            "button#comment-btn",
+            "clicked comment button on lesson {{ .ID }}",
+            "click"
+        )
+
+        commentLesson("{{ .ID }}")
+    })
+</script>
+</body>
+</html>

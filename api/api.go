@@ -12,7 +12,7 @@ import (
 	"website-telemetry-demo/cmd/app/repo"
 )
 
-func HandleAPI(router *gin.Engine, e repo.EventsRepo) *gin.Engine {
+func HandleAPI(router *gin.Engine, e repo.EventsRepo, l repo.LessonsRepo) *gin.Engine {
 	insecure := router.Group("/api")
 
 	insecure.GET("/ping", func(c *gin.Context) {
@@ -64,28 +64,94 @@ func HandleAPI(router *gin.Engine, e repo.EventsRepo) *gin.Engine {
 		c.Abort()
 	})
 
-	monitoringGroup := api.Group("/monitoring", middlewares.RequireAuth())
-	monitoringGroup.POST("/event", func(c *gin.Context) {
-		var payload entities.Event
+	{
+		monitoringGroup := api.Group("/monitoring")
 
-		err := c.ShouldBindJSON(&payload)
-		if err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
-			return
-		}
+		monitoringGroup.POST("/event", func(c *gin.Context) {
+			var payload entities.Event
 
-		payload.Timestamp = time.Now()
-		payload.SessionUUID = c.GetString("user_session_token")
-		payload.Username = c.GetString("user_name")
-		payload.SourceIP = c.ClientIP()
+			err := c.ShouldBindJSON(&payload)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
 
-		err = e.SaveEvent(payload)
-		if err != nil {
-			slog.Warn(err.Error())
-		}
+			payload.Timestamp = time.Now()
+			payload.SessionUUID = c.GetString("user_session_token")
+			payload.Username = c.GetString("user_name")
+			payload.SourceIP = c.ClientIP()
 
-		slog.Info(fmt.Sprintf("registered event: %s", payload.String()))
-	})
+			err = e.SaveEvent(payload)
+			if err != nil {
+				slog.Warn(err.Error())
+			}
+
+			slog.Info(fmt.Sprintf("registered event: %s", payload.String()))
+		})
+	}
+
+	{
+		lessonsGroup := api.Group("/lessons")
+
+		lessonsGroup.POST("/like", func(c *gin.Context) {
+			var payload struct {
+				ID uint64 `json:"id" binding:"required"`
+			}
+
+			err := c.ShouldBindJSON(&payload)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+
+			err = l.LikeLesson(payload.ID)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+		})
+		lessonsGroup.POST("/dislike", func(c *gin.Context) {
+			var payload struct {
+				ID uint64 `json:"id" binding:"required"`
+			}
+
+			err := c.ShouldBindJSON(&payload)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+
+			err = l.DislikeLesson(payload.ID)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+		})
+		lessonsGroup.POST("/comment", func(c *gin.Context) {
+			var payload struct {
+				ID      uint64 `json:"id" binding:"required"`
+				Comment string `json:"comment" binding:"required"`
+			}
+
+			err := c.ShouldBindJSON(&payload)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+
+			err = l.CommentLesson(payload.ID, entities.Comment{
+				Author:    c.GetString("user_name"),
+				Text:      payload.Comment,
+				LessonID:  &payload.ID,
+				CreatedAt: time.Now(),
+			})
+
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+		})
+	}
 
 	return router
 }

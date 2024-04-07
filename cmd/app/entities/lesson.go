@@ -4,6 +4,10 @@ type Lesson struct {
 	ID          uint64
 	Name        string
 	Description string
+
+	Likes    uint64
+	Dislikes uint64
+	Comments []Comment `gorm:"foreignKey:LessonID"`
 }
 
 var GoLessons = []Lesson{

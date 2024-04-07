@@ -1,8 +1,11 @@
 {{ define "lessonCard" }}
 
+
 <li class="lesson-card" id="lesson-card__{{ .ID }}">
-    <h3>#{{ .ID }}. {{ .Name }}</h3>
-    <p>{{ .Description }}</p>
+    <a href="/materials/{{ .ID }}">
+        <h3>#{{ .ID }}. {{ .Name }}</h3>
+        <p>{{ .Description }}</p>
+    </a>
 </li>
 <script>
     card = document.querySelector("li#lesson-card__{{ .ID }}")
