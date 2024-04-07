@@ -6,13 +6,14 @@ import (
 )
 
 type Event struct {
-	Element   string `json:"element" binding:"required"`
+	Element   string `json:"element"`
 	EventType string `json:"event_type" binding:"required"`
 	Message   string `json:"message" binding:"required"`
 
 	// evaluated on the backend
 	SessionUUID string    `json:"-"`
 	Username    string    `json:"-"`
+	SourceIP    string    `json:"-"`
 	Timestamp   time.Time `json:"-"`
 }
 

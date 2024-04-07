@@ -13,13 +13,13 @@ import (
 )
 
 func HandleAPI(router *gin.Engine, e repo.EventsRepo) *gin.Engine {
-	api := router.Group("/api")
+	insecure := router.Group("/api")
 
-	api.GET("/ping", func(c *gin.Context) {
+	insecure.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{})
 	})
 
-	api.POST("/login", func(c *gin.Context) {
+	insecure.POST("/login", func(c *gin.Context) {
 		var payload authPayload
 
 		err := c.ShouldBindJSON(&payload)
@@ -32,14 +32,37 @@ func HandleAPI(router *gin.Engine, e repo.EventsRepo) *gin.Engine {
 
 		c.SetCookie("user_session_token", sessionUUID.String(), 86400, "/", "", true, true)
 		c.SetCookie("user_name", payload.Username, 86400, "/", "", true, true)
+
+		_ = e.SaveEvent(entities.Event{
+			Element:     "",
+			EventType:   "login",
+			Message:     "user logged in",
+			SessionUUID: sessionUUID.String(),
+			Username:    payload.Username,
+			SourceIP:    c.RemoteIP(),
+			Timestamp:   time.Now(),
+		})
 	})
 
+	api := insecure.Group("")
+	api.Use(middlewares.RequireAuth())
+
 	api.POST("/logout", func(c *gin.Context) {
+		_ = e.SaveEvent(entities.Event{
+			Element:     "",
+			EventType:   "logout",
+			Message:     "user logged out",
+			SessionUUID: c.GetString("user_session_token"),
+			Username:    c.GetString("user_name"),
+			SourceIP:    c.RemoteIP(),
+			Timestamp:   time.Now(),
+		})
+
 		c.SetCookie("user_session_token", "", -1, "/", "", true, true)
 
 		c.Redirect(http.StatusFound, "/login")
 		c.Abort()
-	}, middlewares.RequireAuth())
+	})
 
 	monitoringGroup := api.Group("/monitoring", middlewares.RequireAuth())
 	monitoringGroup.POST("/event", func(c *gin.Context) {
@@ -54,6 +77,7 @@ func HandleAPI(router *gin.Engine, e repo.EventsRepo) *gin.Engine {
 		payload.Timestamp = time.Now()
 		payload.SessionUUID = c.GetString("user_session_token")
 		payload.Username = c.GetString("user_name")
+		payload.SourceIP = c.ClientIP()
 
 		err = e.SaveEvent(payload)
 		if err != nil {
