@@ -23,7 +23,7 @@ services:
     networks:
       - internal
     ports:
-      - "5432:5432"
+      - "9781:5432"
     healthcheck:
       test: [ "CMD", "pg_isready", "-q", "-d", "$DB_NAME", "-U", "$DB_USER" ]
       interval: 10s
