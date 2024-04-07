@@ -25,7 +25,7 @@ services:
     expose:
       - 5432
     healthcheck:
-      test: [ "CMD", "pg_isready", "-q", "-d", "${$DB_NAME}", "-U", "${$DB_USER}" ]
+      test: [ "CMD", "pg_isready", "-q", "-d", "$DB_NAME", "-U", "$DB_USER" ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -57,7 +57,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.telemetry_demo.service=telemetry_demo
-      - traefik.http.routers.telemetry_demo.rule=Host(`$TRAEFIK_HOST`) && PathPrefix(`/$TRAEFIK_PATH`))
+      - traefik.http.routers.telemetry_demo.rule=Host(`$TRAEFIK_HOST`)
       - traefik.http.routers.telemetry_demo.tls=true
       - traefik.http.routers.telemetry_demo.entrypoints=websec
       - traefik.http.services.telemetry_demo.loadbalancer.server.port=80
