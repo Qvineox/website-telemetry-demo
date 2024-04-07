@@ -22,7 +22,7 @@ include:
 build docker image:
   stage: build
   environment:
-    name: Production
+    name: Development
     url: https://telemetry-dev.qvineox.ru
   image: docker:25.0.2
   extends: .registry_setup
