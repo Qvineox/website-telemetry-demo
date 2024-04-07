@@ -94,7 +94,7 @@ deploy to production:
   extends: .registry_setup
   stage: deploy
   needs:
-    - build production docker image
+    - build docker image
   environment:
     name: Development
     url: https://telemetry-dev.qvineox.ru
