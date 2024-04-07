@@ -1,8 +1,11 @@
 package app
 
 import (
+	"fmt"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 	"net"
 	"net/http"
 	"strings"
@@ -10,6 +13,7 @@ import (
 	"website-telemetry-demo/api"
 	"website-telemetry-demo/api/middlewares"
 	"website-telemetry-demo/cmd/app/entities"
+	"website-telemetry-demo/cmd/app/repo"
 	"website-telemetry-demo/configs"
 )
 
@@ -17,7 +21,9 @@ func StartApp(config configs.StaticConfig) {
 	gin.SetMode(gin.DebugMode)
 	router := gin.New()
 
-	router = api.HandleAPI(router)
+	db := prepareDatabaseConnection(config.Database.Host, config.Database.User, config.Database.Password, config.Database.Name, config.Database.Timezone)
+
+	router = api.HandleAPI(router, repo.NewEventsRepo(db))
 
 	router.Use(cors.New(cors.Config{
 		AllowOrigins: strings.Split(config.AllowedOrigins, ","),
@@ -67,4 +73,19 @@ func StartApp(config configs.StaticConfig) {
 	if err != nil {
 		return
 	}
+}
+
+func prepareDatabaseConnection(host, user, password, name, timezone string) *gorm.DB {
+	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=5432 sslmode=disable TimeZone=%s", host, user, password, name, timezone)
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
+
+	err = db.AutoMigrate(&entities.Lesson{}, &entities.Event{})
+	if err != nil {
+		panic("failed to migrate schema")
+	}
+
+	return db
 }
