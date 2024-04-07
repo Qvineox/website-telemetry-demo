@@ -50,8 +50,6 @@ services:
     networks:
       - web
       - internal
-    volumes:
-      - $CI_PROJECT_DIR/tls:/tls
     labels:
       - traefik.enable=true
       - traefik.http.routers.telemetry_demo.service=telemetry_demo

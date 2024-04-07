@@ -19,6 +19,7 @@ RUN go build -ldflags="-s -w" -o /app_build/go_build.exe ./cmd
 
 FROM alpine:3.19.1 as web_server
 
+COPY ./web ./web
 COPY --from=builder /app_build .
 
 CMD ["./go_build.exe"]
