@@ -1,31 +1,33 @@
 {{ define "navigationBar" }}
 
 <script>
-    function navigationEvent(navigateTo) {
+    function navigationEvent(event, navigateTo) {
         monitor.sendMonitoringEvent(
             `a.nav-link`,
             `navigating to ${navigateTo}`,
-            "navigation"
+            event.type,
+            event.clientX,
+            event.clientY,
         )
     }
 </script>
 <nav>
     {{if "home" }}
-    <a href="/" onclick="navigationEvent('/')" class="nav-link__selected">Домой</a>
+    <a href="/" onclick="navigationEvent(event, '/')" class="nav-link__selected">Домой</a>
     {{else}}
-    <a href="/" onclick="navigationEvent('/')" class="nav-link">Домой</a>
+    <a href="/" onclick="navigationEvent(event,'/')" class="nav-link">Домой</a>
     {{end}}
 
     {{if "materials" }}
-    <a href="/materials" onclick="navigationEvent('/materials')" class="nav-link__selected">Материалы</a>
+    <a href="/materials" onclick="navigationEvent(event,'/materials')" class="nav-link__selected">Материалы</a>
     {{else}}
-    <a href="/materials" onclick="navigationEvent('/materials')" class="nav-link">Материалы</a>
+    <a href="/materials" onclick="navigationEvent(event,'/materials')" class="nav-link">Материалы</a>
     {{end}}
 
     {{if "profiles" }}
-    <a href="/profiles" onclick="navigationEvent('/profiles')" class="nav-link__selected">Профили</a>
+    <a href="/profiles" onclick="navigationEvent(event,'/profiles')" class="nav-link__selected">Профили</a>
     {{else}}
-    <a href="/profiles" onclick="navigationEvent('/profiles')" class="nav-link">Профили</a>
+    <a href="/profiles" onclick="navigationEvent(event,'/profiles')" class="nav-link">Профили</a>
     {{end}}
 </nav>
 

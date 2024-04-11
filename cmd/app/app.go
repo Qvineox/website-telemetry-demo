@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"log/slog"
 	"net"
 	"net/http"
 	"strconv"
@@ -67,7 +68,22 @@ func StartApp(config configs.StaticConfig) {
 
 	group := router.Group("/", middlewares.RequireAuth())
 	group.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl", gin.H{})
+		events, err := eRepo.GetRecentEvents(10)
+		if err != nil {
+			c.Status(http.StatusInternalServerError)
+			return
+		}
+
+		lessons, err := lRepo.GetRecentLessons(5)
+		if err != nil {
+			c.Status(http.StatusInternalServerError)
+			return
+		}
+
+		c.HTML(http.StatusOK, "index.tmpl", gin.H{
+			"lessons": lessons,
+			"events":  events,
+		})
 	})
 
 	group.GET("/materials", func(c *gin.Context) {
@@ -103,7 +119,11 @@ func StartApp(config configs.StaticConfig) {
 		c.HTML(http.StatusOK, "profiles.tmpl", gin.H{})
 	})
 
-	err := router.Run(net.JoinHostPort(config.Host, config.Port))
+	host := net.JoinHostPort(config.Host, config.Port)
+
+	slog.Info(fmt.Sprintf("staring server on: http://%s", host))
+
+	err := router.Run(host)
 	if err != nil {
 		return
 	}

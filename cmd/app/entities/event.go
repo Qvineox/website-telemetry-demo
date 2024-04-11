@@ -6,9 +6,15 @@ import (
 )
 
 type Event struct {
+	ID uint64 `json:"id" gorm:"primary_key;auto_increment"`
+
 	Element   string `json:"element"`
 	EventType string `json:"event_type" binding:"required"`
 	Message   string `json:"message" binding:"required"`
+
+	// user click positional data
+	ClientX *int `json:"client_x"`
+	ClientY *int `json:"client_y"`
 
 	// evaluated on the backend
 	SessionUUID string    `json:"-"`

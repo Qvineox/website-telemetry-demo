@@ -1,0 +1,20 @@
+{{ define "eventCard" }}
+
+
+<li class="event-card" id="event-card__{{ .ID }}">
+    <h3>Пользователь '{{ .Username }}' сделал '{{ .EventType }}'</h3>
+    <p>{{ .Message }}</p>
+</li>
+<script>
+    card = document.querySelector("li#event-card__{{ .ID }}")
+
+    card.addEventListener("click", (e) => monitor.sendMonitoringEvent(
+        "li#event-card__{{ .ID }}",
+        "clicked event ID#{{ .ID }}",
+        e.type,
+        e.clientX,
+        e.clientY,
+    ))
+</script>
+
+{{ end }}

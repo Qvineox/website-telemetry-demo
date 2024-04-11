@@ -17,7 +17,22 @@
     <h1>Домашняя страница</h1>
 </header>
 <main>
-
+    <div id="recent-lessons-container">
+        <h2>Новые материалы</h2>
+        <ul class="lesson-group">
+            {{ range .lessons }}
+            {{ template "lessonCard" . }}
+            {{ end }}
+        </ul>
+    </div>
+    <div id="recent-activity-container">
+        <h2>Последняя активность</h2>
+        <ul class="activity-group">
+            {{ range .events }}
+            {{ template "eventCard" . }}
+            {{ end }}
+        </ul>
+    </div>
 </main>
 <script src="../scripts/index.js"></script>
 </body>

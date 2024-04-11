@@ -22,6 +22,14 @@ func (repo LessonsRepo) GetAllLessons() ([]entities.Lesson, error) {
 	return lessons, err
 }
 
+func (repo LessonsRepo) GetRecentLessons(limit int) ([]entities.Lesson, error) {
+	var lessons []entities.Lesson
+
+	err := repo.DB.Omit("Likes", "Dislikes").Limit(limit).Find(&lessons).Order("ID DESC").Error
+
+	return lessons, err
+}
+
 func (repo LessonsRepo) GetLessonByID(id uint64) (entities.Lesson, error) {
 	var lesson entities.Lesson
 

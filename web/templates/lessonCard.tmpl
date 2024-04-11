@@ -10,10 +10,12 @@
 <script>
     card = document.querySelector("li#lesson-card__{{ .ID }}")
 
-    card.addEventListener("click", () => monitor.sendMonitoringEvent(
+    card.addEventListener("click", (e) => monitor.sendMonitoringEvent(
         "li#lesson-card__{{ .ID }}",
         "clicked lesson ID#{{ .ID }}",
-        "click"
+        e.type,
+        e.clientX,
+        e.clientY,
     ))
 </script>
 

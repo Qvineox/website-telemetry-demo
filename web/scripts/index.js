@@ -9,8 +9,8 @@
 // }
 
 class MonitoringDispatcher {
-    sendMonitoringEvent(element, message, eventType) {
-        console.debug(`logging event '${element} : ${eventType}': ${message}...`)
+    sendMonitoringEvent(element, message, eventType, x, y) {
+        console.debug(`logging event '${element} : ${eventType}': ${message} (x: ${x}, y: ${y})...`)
 
         fetch('/api/monitoring/event', {
             method: 'POST',
@@ -18,7 +18,13 @@ class MonitoringDispatcher {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify(
-                {"element": element, message: message, "event_type": eventType}
+                {
+                    "element": element,
+                    "message": message,
+                    "event_type": eventType,
+                    "client_x": x,
+                    "client_y": y
+                }
             )
         }).then((response) => {
             if (response.ok) {
