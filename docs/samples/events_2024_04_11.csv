@@ -1,182 +1,107 @@
-id,element,event_type,message,client_x,client_y,session_uuid,username,source_ip,timestamp
-1,a.nav-link,click,navigating to /profiles,305,26,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:07:17.703595 +00:00
-2,a.nav-link,click,navigating to /materials,184,27,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:07:18.184365 +00:00
-3,a.nav-link,click,navigating to /,58,13,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:07:18.709772 +00:00
-4,li#event-card__2,click,clicked event ID#2,921,658,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:08:52.691276 +00:00
-5,li#event-card__4,click,clicked event ID#4,794,875,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:09:01.877019 +00:00
-6,li#event-card__3,click,clicked event ID#3,1037,751,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:09:09.659130 +00:00
-7,li#event-card__2,click,clicked event ID#2,545,571,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:10:04.795565 +00:00
-8,li#event-card__3,click,clicked event ID#3,773,566,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:10:05.203060 +00:00
-9,li#event-card__4,click,clicked event ID#4,1125,568,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:10:05.949417 +00:00
-10,li#event-card__6,click,clicked event ID#6,1696,570,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:10:09.002436 +00:00
-11,a.nav-link,click,navigating to /materials,216,38,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:10:13.018664 +00:00
-12,a.nav-link,click,navigating to /,74,32,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:10:13.596452 +00:00
-13,a.nav-link,click,navigating to /profiles,322,23,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:11:47.445254 +00:00
-14,a.nav-link,click,navigating to /materials,187,28,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:11:47.815100 +00:00
-15,a.nav-link,click,navigating to /,62,32,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:11:48.208206 +00:00
-16,li#lesson-card__2,click,clicked lesson ID#2,265,189,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:11:49.938073 +00:00
-17,li#lesson-card__2,click,clicked lesson ID#2,174,178,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:11:53.675259 +00:00
-18,li#lesson-card__6,click,clicked lesson ID#6,262,463,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:11:56.089524 +00:00
-19,a.nav-link,click,navigating to /materials,170,28,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:12:13.224042 +00:00
-20,a.nav-link,click,navigating to /,69,22,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:12:14.483656 +00:00
-21,a.nav-link,click,navigating to /profiles,301,28,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:12:43.290719 +00:00
-22,a.nav-link,click,navigating to /,70,23,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:12:44.305141 +00:00
-23,li#event-card__17,click,clicked event ID#17,308,630,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:12:47.727109 +00:00
-24,li#event-card__22,click,clicked event ID#22,286,557,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:12:48.910483 +00:00
-25,a.nav-link,click,navigating to /materials,161,30,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:38.724593 +00:00
-26,a.nav-link,click,navigating to /,51,32,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:39.294001 +00:00
-27,li#lesson-card__2,click,clicked lesson ID#2,131,168,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:39.879632 +00:00
-28,a.nav-link,click,navigating to /,65,33,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:42.732823 +00:00
-29,a.nav-link,click,navigating to /materials,171,27,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:43.370693 +00:00
-30,a.nav-link,click,navigating to /,60,19,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:45.121645 +00:00
-31,a.nav-link,click,navigating to /profiles,298,22,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:50.108001 +00:00
-32,a.nav-link,click,navigating to /,78,19,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:51.009299 +00:00
-33,a.nav-link,click,navigating to /profiles,273,28,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:51.875983 +00:00
-34,"",logout,user logged out,,,df217f6e-c550-4290-b6b8-51d3f5d310d9,123,127.0.0.1,2024-04-11 18:13:54.965821 +00:00
-35,"",login,user logged in,,,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:01.041101 +00:00
-36,li#event-card__34,click,clicked event ID#34,514,560,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:02.858691 +00:00
-37,li#event-card__33,click,clicked event ID#33,994,558,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:03.979981 +00:00
-38,li#lesson-card__5,click,clicked lesson ID#5,881,385,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:04.460175 +00:00
-39,li#lesson-card__3,click,clicked lesson ID#3,963,262,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:05.815145 +00:00
-40,li#lesson-card__2,click,clicked lesson ID#2,840,179,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:07.041236 +00:00
-41,li#lesson-card__6,click,clicked lesson ID#6,357,460,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:08.581562 +00:00
-42,li#lesson-card__5,click,clicked lesson ID#5,268,366,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:09.395007 +00:00
-43,li#lesson-card__4,click,clicked lesson ID#4,302,330,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:10.383994 +00:00
-44,li#lesson-card__3,click,clicked lesson ID#3,721,257,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:11.625624 +00:00
-45,li#lesson-card__6,click,clicked lesson ID#6,1379,446,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:13.174588 +00:00
-46,a.nav-link,click,navigating to /materials,154,26,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:14.908014 +00:00
-47,a.nav-link,click,navigating to /,65,28,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:15.319682 +00:00
-48,li#lesson-card__4,click,clicked lesson ID#4,1283,321,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:22.775795 +00:00
-49,a.nav-link,click,navigating to /profiles,323,23,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:24.252987 +00:00
-50,a.nav-link,click,navigating to /materials,190,28,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:24.795547 +00:00
-51,a.nav-link,click,navigating to /,51,28,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:25.451767 +00:00
-52,a.nav-link,click,navigating to /materials,129,28,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:25.819610 +00:00
-53,li#lesson-card__6,click,clicked lesson ID#6,173,272,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:26.345005 +00:00
-54,button#like-btn,click,clicked like button on lesson 6,162,153,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:27.852523 +00:00
-56,button#like-btn,click,clicked like button on lesson 6,170,149,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:28.506893 +00:00
-58,button#dislike-btn,click,clicked dislike button on lesson 6,182,164,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:29.200230 +00:00
-60,button#comment-btn,click,clicked comment button on lesson 6,154,198,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:30.320115 +00:00
-61,li#lesson-card__4,click,clicked lesson ID#4,191,184,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:33.284028 +00:00
-62,li#lesson-card__4,click,clicked lesson ID#4,177,195,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:34.377952 +00:00
-63,button#like-btn,click,clicked like button on lesson 4,144,159,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:35.282833 +00:00
-65,button#like-btn,click,clicked like button on lesson 4,157,162,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:35.923030 +00:00
-67,button#dislike-btn,click,clicked dislike button on lesson 4,186,181,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:36.836109 +00:00
-69,button#like-btn,click,clicked like button on lesson 4,159,169,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:37.652555 +00:00
-73,button#dislike-btn,click,clicked dislike button on lesson 4,187,190,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:44.750934 +00:00
-75,a.nav-link,click,navigating to /materials,190,25,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:45.762754 +00:00
-76,li#lesson-card__2,click,clicked lesson ID#2,132,129,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:46.714981 +00:00
-77,button#like-btn,click,clicked like button on lesson 2,164,166,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:47.258421 +00:00
-79,button#like-btn,click,clicked like button on lesson 2,164,168,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:47.898921 +00:00
-80,button#like-btn,click,clicked like button on lesson 2,164,168,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:48.189239 +00:00
-82,button#comment-btn,click,clicked comment button on lesson 2,197,219,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:49.099334 +00:00
-83,a.nav-link,click,navigating to /,40,20,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:52.150049 +00:00
-84,a.nav-link,click,navigating to /profiles,299,25,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:52.858312 +00:00
-85,"",logout,user logged out,,,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:53.691545 +00:00
-86,"",login,user logged in,,,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:01.208734 +00:00
-87,li#lesson-card__3,click,clicked lesson ID#3,131,175,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:01.985210 +00:00
-88,button#dislike-btn,click,clicked dislike button on lesson 3,181,186,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:03.028615 +00:00
-90,button#dislike-btn,click,clicked dislike button on lesson 3,209,190,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:04.087710 +00:00
-92,button#dislike-btn,click,clicked dislike button on lesson 3,207,189,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:04.717245 +00:00
-94,button#dislike-btn,click,clicked dislike button on lesson 3,207,189,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:05.384858 +00:00
-96,button#dislike-btn,click,clicked dislike button on lesson 3,203,190,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:06.193947 +00:00
-98,button#comment-btn,click,clicked comment button on lesson 3,181,223,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:06.967008 +00:00
-99,button#dislike-btn,click,clicked dislike button on lesson 3,185,189,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:10.158918 +00:00
-101,button#comment-btn,click,clicked comment button on lesson 3,203,220,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:11.690151 +00:00
-102,a.nav-link,click,navigating to /materials,147,30,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:14.191944 +00:00
-55,button#like-btn,click,clicked like button on lesson 6,170,149,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:28.296393 +00:00
-57,button#like-btn,click,clicked like button on lesson 6,170,149,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:28.681914 +00:00
-59,button#dislike-btn,click,clicked dislike button on lesson 6,185,176,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:29.663206 +00:00
-64,button#like-btn,click,clicked like button on lesson 4,157,162,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:35.550830 +00:00
-66,button#like-btn,click,clicked like button on lesson 4,157,162,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:36.145084 +00:00
-68,button#dislike-btn,click,clicked dislike button on lesson 4,191,192,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:37.230718 +00:00
-70,button#comment-btn,click,clicked comment button on lesson 4,183,230,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:38.140474 +00:00
-71,button#comment-btn,click,clicked comment button on lesson 4,154,223,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:41.012818 +00:00
-72,button#dislike-btn,click,clicked dislike button on lesson 4,187,190,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:44.397079 +00:00
-74,button#dislike-btn,click,clicked dislike button on lesson 4,183,186,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:45.175859 +00:00
-78,button#like-btn,click,clicked like button on lesson 2,164,168,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:47.470139 +00:00
-81,button#dislike-btn,click,clicked dislike button on lesson 2,188,180,c8cd9e83-612c-42bd-8a6e-a6225a89c29b,ydlysak,127.0.0.1,2024-04-11 18:14:48.563325 +00:00
-89,button#dislike-btn,click,clicked dislike button on lesson 3,184,190,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:03.387163 +00:00
-91,button#dislike-btn,click,clicked dislike button on lesson 3,207,189,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:04.429658 +00:00
-93,button#dislike-btn,click,clicked dislike button on lesson 3,207,189,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:05.060170 +00:00
-95,button#dislike-btn,click,clicked dislike button on lesson 3,207,189,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:05.754115 +00:00
-97,button#dislike-btn,click,clicked dislike button on lesson 3,202,190,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:06.591133 +00:00
-100,button#dislike-btn,click,clicked dislike button on lesson 3,207,191,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:11.218855 +00:00
-103,li#lesson-card__6,click,clicked lesson ID#6,165,336,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:15.162923 +00:00
-104,button#dislike-btn,click,clicked dislike button on lesson 6,186,175,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:16.207542 +00:00
-105,button#like-btn,click,clicked like button on lesson 6,153,142,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:16.580889 +00:00
-106,button#comment-btn,click,clicked comment button on lesson 6,172,203,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:17.071316 +00:00
-107,button#comment-btn,click,clicked comment button on lesson 6,217,204,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:22.175126 +00:00
-108,button#like-btn,click,clicked like button on lesson 6,158,144,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:25.482658 +00:00
-109,button#like-btn,click,clicked like button on lesson 6,165,144,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:25.909316 +00:00
-110,a.nav-link,click,navigating to /,78,17,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:26.468739 +00:00
-111,li#lesson-card__2,click,clicked lesson ID#2,159,424,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:27.440529 +00:00
-112,button#dislike-btn,click,clicked dislike button on lesson 2,208,183,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:28.157604 +00:00
-113,a.nav-link,click,navigating to /profiles,286,32,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:28.910482 +00:00
-114,a.nav-link,click,navigating to /materials,165,24,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:29.331128 +00:00
-115,li#lesson-card__5,click,clicked lesson ID#5,168,127,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:30.178625 +00:00
-116,button#like-btn,click,clicked like button on lesson 5,177,165,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:30.747677 +00:00
-117,button#dislike-btn,click,clicked dislike button on lesson 5,183,180,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:31.164638 +00:00
-118,button#dislike-btn,click,clicked dislike button on lesson 5,188,185,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:31.384889 +00:00
-119,button#dislike-btn,click,clicked dislike button on lesson 5,188,185,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:31.555561 +00:00
-120,button#dislike-btn,click,clicked dislike button on lesson 5,188,185,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:31.740349 +00:00
-121,button#dislike-btn,click,clicked dislike button on lesson 5,188,186,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:31.915623 +00:00
-122,button#dislike-btn,click,clicked dislike button on lesson 5,188,186,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:32.097572 +00:00
-123,button#dislike-btn,click,clicked dislike button on lesson 5,188,186,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:32.235052 +00:00
-124,button#dislike-btn,click,clicked dislike button on lesson 5,188,186,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:32.543972 +00:00
-125,button#dislike-btn,click,clicked dislike button on lesson 5,189,186,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:32.690225 +00:00
-126,button#comment-btn,click,clicked comment button on lesson 5,189,217,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:33.016804 +00:00
-127,a.nav-link,click,navigating to /profiles,327,24,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:35.851701 +00:00
-128,"",logout,user logged out,,,41b947a1-0315-48c3-8ac9-6c940b01d01a,test_user,127.0.0.1,2024-04-11 18:15:36.715209 +00:00
-129,"",login,user logged in,,,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:43.307336 +00:00
-130,li#lesson-card__7,click,clicked lesson ID#7,204,146,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:43.970033 +00:00
-131,li#lesson-card__7,click,clicked lesson ID#7,192,175,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:44.634972 +00:00
-132,button#dislike-btn,click,clicked dislike button on lesson 7,178,175,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:45.177586 +00:00
-135,button#dislike-btn,click,clicked dislike button on lesson 7,178,175,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:45.913244 +00:00
-137,button#dislike-btn,click,clicked dislike button on lesson 7,178,175,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:46.216724 +00:00
-139,button#dislike-btn,click,clicked dislike button on lesson 7,180,173,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:46.889640 +00:00
-148,li#lesson-card__1,click,clicked lesson ID#1,220,243,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:56.719203 +00:00
-149,li#lesson-card__7,click,clicked lesson ID#7,213,262,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:57.226577 +00:00
-150,button#dislike-btn,click,clicked dislike button on lesson 7,203,170,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:57.900264 +00:00
-163,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:06.183376 +00:00
-164,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:06.554498 +00:00
-166,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:06.890019 +00:00
-167,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:07.041949 +00:00
-168,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:07.226057 +00:00
-170,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:07.720748 +00:00
-172,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:08.045366 +00:00
-173,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:08.196730 +00:00
-174,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:08.366002 +00:00
-175,button#dislike-btn,click,clicked dislike button on lesson 8,173,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:08.541033 +00:00
-176,button#dislike-btn,click,clicked dislike button on lesson 8,176,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:08.715473 +00:00
-178,button#comment-btn,click,clicked comment button on lesson 8,180,224,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:09.307779 +00:00
-179,a.nav-link,click,navigating to /,64,24,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:12.960545 +00:00
-180,a.nav-link,click,navigating to /profiles,302,18,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:13.357071 +00:00
-181,"",logout,user logged out,,,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:14.177070 +00:00
-133,button#dislike-btn,click,clicked dislike button on lesson 7,178,175,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:45.394100 +00:00
-134,button#dislike-btn,click,clicked dislike button on lesson 7,178,175,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:45.730137 +00:00
-136,button#dislike-btn,click,clicked dislike button on lesson 7,178,175,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:46.071128 +00:00
-138,button#dislike-btn,click,clicked dislike button on lesson 7,178,175,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:46.555977 +00:00
-140,button#comment-btn,click,clicked comment button on lesson 7,174,203,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:47.174072 +00:00
-141,button#comment-btn,click,clicked comment button on lesson 7,246,206,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:49.754375 +00:00
-142,a.nav-link,click,navigating to /materials,151,30,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:51.959166 +00:00
-143,li#lesson-card__3,click,clicked lesson ID#3,184,324,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:52.624703 +00:00
-144,a.nav-link,click,navigating to /materials,198,23,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:53.971648 +00:00
-145,li#lesson-card__4,click,clicked lesson ID#4,218,163,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:54.490775 +00:00
-146,li#lesson-card__5,click,clicked lesson ID#5,220,186,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:55.239550 +00:00
-147,button#dislike-btn,click,clicked dislike button on lesson 5,215,186,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:55.804521 +00:00
-151,button#dislike-btn,click,clicked dislike button on lesson 7,203,170,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:58.098776 +00:00
-152,a.nav-link,click,navigating to /,42,16,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:58.594220 +00:00
-153,li#event-card__152,click,clicked event ID#152,295,565,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:15:59.755447 +00:00
-154,li#event-card__145,click,clicked event ID#145,626,671,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:00.431328 +00:00
-155,li#event-card__150,click,clicked event ID#150,924,580,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:00.858559 +00:00
-156,li#event-card__144,click,clicked event ID#144,975,659,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:01.094460 +00:00
-157,li#lesson-card__5,click,clicked lesson ID#5,326,390,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:01.602112 +00:00
-158,li#lesson-card__1,click,clicked lesson ID#1,216,300,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:02.433701 +00:00
-159,li#lesson-card__4,click,clicked lesson ID#4,205,244,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:03.282425 +00:00
-160,li#lesson-card__8,click,clicked lesson ID#8,195,186,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:04.052053 +00:00
-161,li#lesson-card__8,click,clicked lesson ID#8,162,203,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:05.504358 +00:00
-162,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:05.954381 +00:00
-165,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:06.709596 +00:00
-169,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:07.388464 +00:00
-171,button#dislike-btn,click,clicked dislike button on lesson 8,171,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:07.876210 +00:00
-177,button#dislike-btn,click,clicked dislike button on lesson 8,183,187,66be3f9d-05dc-4c3b-afcf-3a3762c0d7d1,test_user_2,127.0.0.1,2024-04-11 18:16:08.915981 +00:00
+id,element,event_type,message,location,client_x,client_y,session_uuid,username,source_ip,timestamp
+1,a.nav-link,click,navigating to /materials,"",138,30,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:43:37.912319 +00:00
+2,a.nav-link,click,navigating to /,"",71,30,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:43:37.914503 +00:00
+3,li#lesson-card__5,click,clicked lesson ID#5,/,990,487,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:44:24.140288 +00:00
+4,button#like-btn,click,clicked like button on lesson 5,/materials/5,162,184,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:44:38.481687 +00:00
+5,a.nav-link,click,navigating to /profiles,/materials/5,328,32,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:44:46.880364 +00:00
+6,"",logout,user logged out,"",,,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:44:47.722354 +00:00
+7,"",login,user logged in,"",,,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:44:55.807093 +00:00
+8,li#lesson-card__5,click,clicked lesson ID#5,/,243,181,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:44:56.487013 +00:00
+9,li#lesson-card__3,click,clicked lesson ID#3,/,207,311,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:44:57.458229 +00:00
+10,button#like-btn,click,clicked like button on lesson 3,/materials/3,153,156,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:44:58.362075 +00:00
+11,button#like-btn,click,clicked like button on lesson 3,/materials/3,160,160,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:44:58.713785 +00:00
+12,button#comment-btn,click,clicked comment button on lesson 3,/materials/3,172,229,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:44:59.313963 +00:00
+13,a.nav-link,click,navigating to /materials,/materials/3,151,32,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:01.626382 +00:00
+14,li#lesson-card__8,click,clicked lesson ID#8,/materials,133,332,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:02.385183 +00:00
+15,li#lesson-card__7,click,clicked lesson ID#7,/materials,139,366,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:03.276855 +00:00
+16,li#lesson-card__6,click,clicked lesson ID#6,/materials,139,264,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:04.494264 +00:00
+17,li#lesson-card__4,click,clicked lesson ID#4,/materials,141,230,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:05.194782 +00:00
+18,li#lesson-card__1,click,clicked lesson ID#1,/materials,127,168,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:06.244137 +00:00
+19,li#lesson-card__5,click,clicked lesson ID#5,/materials,139,136,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:07.003675 +00:00
+20,a.nav-link,click,navigating to /,/materials,67,25,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:07.925069 +00:00
+21,li#lesson-card__6,click,clicked lesson ID#6,/,161,448,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:08.545228 +00:00
+22,li#lesson-card__1,click,clicked lesson ID#1,/,172,248,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:09.560749 +00:00
+23,button#like-btn,click,clicked like button on lesson 1,/materials/1,181,161,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:10.298655 +00:00
+24,button#like-btn,click,clicked like button on lesson 1,/materials/1,181,161,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:10.493840 +00:00
+25,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,186,188,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:10.863729 +00:00
+26,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,185,193,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:11.523013 +00:00
+27,button#like-btn,click,clicked like button on lesson 1,/materials/1,171,167,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:11.903636 +00:00
+28,button#comment-btn,click,clicked comment button on lesson 1,/materials/1,180,222,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:12.276939 +00:00
+29,a.nav-link,click,navigating to /,/materials/1,54,24,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:15.537463 +00:00
+30,li#event-card__23,click,clicked event ID#23,/,220,675,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:15.966153 +00:00
+31,li#event-card__26,click,clicked event ID#26,/,303,605,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:16.379481 +00:00
+32,li#event-card__25,click,clicked event ID#25,/,632,613,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:16.613563 +00:00
+33,li#event-card__22,click,clicked event ID#22,/,633,668,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:16.822581 +00:00
+34,li#event-card__25,click,clicked event ID#25,/,709,616,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:17.007307 +00:00
+35,li#event-card__27,click,clicked event ID#27,/,1085,562,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:17.217265 +00:00
+36,li#event-card__27,click,clicked event ID#27,/,1087,557,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:17.393963 +00:00
+37,li#lesson-card__4,click,clicked lesson ID#4,/,740,335,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:17.794564 +00:00
+38,li#lesson-card__3,click,clicked lesson ID#3,/,479,263,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:18.669521 +00:00
+39,a.nav-link,click,navigating to /profiles,/,290,34,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:19.614782 +00:00
+40,a.nav-link,click,navigating to /materials,/profiles,166,24,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:20.367680 +00:00
+41,li#lesson-card__5,click,clicked lesson ID#5,/materials,261,128,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:21.023695 +00:00
+42,li#lesson-card__6,click,clicked lesson ID#6,/materials,220,258,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:21.837735 +00:00
+43,button#like-btn,click,clicked like button on lesson 6,/materials/6,168,145,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:22.493164 +00:00
+44,button#dislike-btn,click,clicked dislike button on lesson 6,/materials/6,181,164,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:22.809229 +00:00
+45,button#comment-btn,click,clicked comment button on lesson 6,/materials/6,202,203,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:23.256843 +00:00
+46,li#lesson-card__7,click,clicked lesson ID#7,/materials,173,373,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:26.641748 +00:00
+47,button#like-btn,click,clicked like button on lesson 7,/materials/7,161,148,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:27.447062 +00:00
+48,button#like-btn,click,clicked like button on lesson 7,/materials/7,161,149,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:27.661158 +00:00
+49,a.nav-link,click,navigating to /materials,/materials/7,153,25,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:28.628371 +00:00
+50,li#lesson-card__5,click,clicked lesson ID#5,/materials,156,132,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:29.135901 +00:00
+51,button#like-btn,click,clicked like button on lesson 5,/materials/5,172,175,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:29.489117 +00:00
+53,li#lesson-card__3,click,clicked lesson ID#3,/materials,168,197,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:31.025274 +00:00
+54,button#dislike-btn,click,clicked dislike button on lesson 3,/materials/3,207,193,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:31.570739 +00:00
+63,button#like-btn,click,clicked like button on lesson 4,/materials/4,150,164,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:49.588732 +00:00
+66,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,173,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:51.261702 +00:00
+69,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,173,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:51.752746 +00:00
+71,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,174,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:52.203577 +00:00
+91,button#like-btn,click,clicked like button on lesson 7,/materials/7,158,147,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:07.277348 +00:00
+93,button#like-btn,click,clicked like button on lesson 7,/materials/7,158,147,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:07.592715 +00:00
+96,button#dislike-btn,click,clicked dislike button on lesson 7,/materials/7,187,158,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:08.175427 +00:00
+98,button#dislike-btn,click,clicked dislike button on lesson 7,/materials/7,187,165,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:08.961168 +00:00
+100,button#dislike-btn,click,clicked dislike button on lesson 7,/materials/7,196,172,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:09.680456 +00:00
+101,button#comment-btn,click,clicked comment button on lesson 7,/materials/7,211,204,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:10.246967 +00:00
+102,a.nav-link,click,navigating to /materials,/materials/7,176,25,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:13.115242 +00:00
+103,a.nav-link,click,navigating to /,/materials,71,22,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:13.805708 +00:00
+52,button#dislike-btn,click,clicked dislike button on lesson 5,/materials/5,178,179,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:30.327514 +00:00
+55,button#comment-btn,click,clicked comment button on lesson 3,/materials/3,192,226,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:31.919802 +00:00
+56,a.nav-link,click,navigating to /profiles,/materials/3,306,20,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:40.240381 +00:00
+57,"",logout,user logged out,"",,,c88919f8-d5e6-4562-b25c-173bb71ddad9,ydlysak,127.0.0.1,2024-04-11 18:45:41.009637 +00:00
+58,"",login,user logged in,"",,,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:46.595864 +00:00
+59,li#lesson-card__3,click,clicked lesson ID#3,/,196,171,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:47.047507 +00:00
+60,li#lesson-card__6,click,clicked lesson ID#6,/,191,236,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:47.878159 +00:00
+61,li#lesson-card__4,click,clicked lesson ID#4,/,206,305,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:48.604665 +00:00
+62,button#dislike-btn,click,clicked dislike button on lesson 4,/materials/4,187,185,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:49.253274 +00:00
+64,li#lesson-card__1,click,clicked lesson ID#1,/,207,403,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:50.425018 +00:00
+65,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,173,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:51.101931 +00:00
+67,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,173,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:51.432227 +00:00
+68,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,173,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:51.598879 +00:00
+70,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,174,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:52.054262 +00:00
+72,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,180,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:52.545349 +00:00
+73,button#dislike-btn,click,clicked dislike button on lesson 1,/materials/1,180,187,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:52.552188 +00:00
+74,button#comment-btn,click,clicked comment button on lesson 1,/materials/1,173,222,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:52.871047 +00:00
+75,a.nav-link,click,navigating to /materials,/materials/1,192,28,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:55.701136 +00:00
+76,li#lesson-card__2,click,clicked lesson ID#2,/materials,248,312,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:56.409779 +00:00
+77,a.nav-link,click,navigating to /,/materials/1,73,35,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:57.354986 +00:00
+78,li#event-card__73,click,clicked event ID#73,/,610,595,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:58.195281 +00:00
+79,li#event-card__75,click,clicked event ID#75,/,1058,557,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:59.062360 +00:00
+80,li#lesson-card__3,click,clicked lesson ID#3,/,784,177,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:45:59.498881 +00:00
+81,a.nav-link,click,navigating to /materials,/materials/3,174,24,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:00.602672 +00:00
+82,li#lesson-card__6,click,clicked lesson ID#6,/materials,215,172,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:01.267233 +00:00
+83,li#lesson-card__1,click,clicked lesson ID#1,/materials,202,221,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:02.054858 +00:00
+84,li#lesson-card__2,click,clicked lesson ID#2,/materials,190,311,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:02.754327 +00:00
+85,li#lesson-card__5,click,clicked lesson ID#5,/materials,242,376,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:03.463642 +00:00
+86,li#lesson-card__8,click,clicked lesson ID#8,/materials,231,321,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:04.155399 +00:00
+87,li#lesson-card__2,click,clicked lesson ID#2,/materials,229,293,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:04.592186 +00:00
+88,li#lesson-card__1,click,clicked lesson ID#1,/materials,193,228,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:05.791155 +00:00
+89,li#lesson-card__7,click,clicked lesson ID#7,/materials,192,259,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:06.498991 +00:00
+90,button#like-btn,click,clicked like button on lesson 7,/materials/7,158,147,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:07.095832 +00:00
+92,button#like-btn,click,clicked like button on lesson 7,/materials/7,158,147,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:07.444642 +00:00
+94,button#like-btn,click,clicked like button on lesson 7,/materials/7,158,147,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:07.768692 +00:00
+95,button#dislike-btn,click,clicked dislike button on lesson 7,/materials/7,187,158,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:08.017230 +00:00
+97,button#like-btn,click,clicked like button on lesson 7,/materials/7,174,143,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:08.698093 +00:00
+99,button#like-btn,click,clicked like button on lesson 7,/materials/7,176,150,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:09.398435 +00:00
+104,li#lesson-card__3,click,clicked lesson ID#3,/,65,184,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:14.664253 +00:00
+105,a.nav-link,click,navigating to /profiles,/,314,15,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:15.853554 +00:00
+106,"",logout,user logged out,"",,,996e55a9-dc36-4b9f-92fc-23af3b937f92,test_user_1,127.0.0.1,2024-04-11 18:46:16.678259 +00:00

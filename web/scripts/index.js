@@ -9,7 +9,7 @@
 // }
 
 class MonitoringDispatcher {
-    sendMonitoringEvent(element, message, eventType, x, y) {
+    sendMonitoringEvent(element, message, eventType, x, y, path) {
         console.debug(`logging event '${element} : ${eventType}': ${message} (x: ${x}, y: ${y})...`)
 
         fetch('/api/monitoring/event', {
@@ -23,7 +23,8 @@ class MonitoringDispatcher {
                     "message": message,
                     "event_type": eventType,
                     "client_x": x,
-                    "client_y": y
+                    "client_y": y,
+                    "location": document.location.pathname
                 }
             )
         }).then((response) => {

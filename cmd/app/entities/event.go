@@ -11,6 +11,7 @@ type Event struct {
 	Element   string `json:"element"`
 	EventType string `json:"event_type" binding:"required"`
 	Message   string `json:"message" binding:"required"`
+	Location  string `json:"location"`
 
 	// user click positional data
 	ClientX *int `json:"client_x"`
