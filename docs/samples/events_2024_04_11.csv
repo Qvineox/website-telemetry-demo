@@ -1,6 +1,4 @@
 id,element,event_type,message,location,client_x,client_y,session_uuid,username,source_ip,timestamp
-1,a.nav-link,click,navigating to /materials,"",138,30,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:43:37.912319 +00:00
-2,a.nav-link,click,navigating to /,"",71,30,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:43:37.914503 +00:00
 3,li#lesson-card__5,click,clicked lesson ID#5,/,990,487,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:44:24.140288 +00:00
 4,button#like-btn,click,clicked like button on lesson 5,/materials/5,162,184,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:44:38.481687 +00:00
 5,a.nav-link,click,navigating to /profiles,/materials/5,328,32,4a03da24-5ff4-4efc-aa06-a6d90f8d08cc,123123,127.0.0.1,2024-04-11 18:44:46.880364 +00:00
