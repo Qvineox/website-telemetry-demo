@@ -24,6 +24,12 @@ type Event struct {
 	Timestamp   time.Time `json:"-"`
 }
 
+type ClickData struct {
+	X     int `json:"x"`
+	Y     int `json:"y"`
+	Value int `json:"value"`
+}
+
 func (e *Event) String() string {
 	return fmt.Sprintf("session: %s, message: %s", e.SessionUUID, e.Message)
 }

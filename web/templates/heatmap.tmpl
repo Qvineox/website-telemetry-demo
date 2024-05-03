@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Карта взаимодействий</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/heatmap.css">
+    <link rel="icon" href="../icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+{{ template "navigationBar" "home" }}
+
+<div id="telemetry_filter">
+    <label for="user-selection">Пользователь</label>
+    <select name="user-selection" id="user-selection">
+        <option value="0">Не указано</option>
+    </select>
+
+    <label for="user-session-selection">Сессия</label>
+    <select name="user-session-selection" id="user-session-selection">
+    </select>
+
+    <label for="location-selection">Страница</label>
+    <select name="location-selection" id="location-selection">
+        <option value="/">/</option>
+        <option value="/materials">/materials</option>
+        <!--        <option value="/profiles">/profiles</option>-->
+    </select>
+
+    <button id="build_btn">
+        Построить карту
+    </button>
+</div>
+
+<div id="heatmap_container">
+    <img id="homepage_img" src="../images/home.png" alt="homepage">
+    <img id="materials_img" src="../images/materials.png" alt="materials" hidden>
+</div>
+</body>
+
+<script src="../scripts/heatmap/heatmap.min.js"></script>
+
+<script>
+    fetch(`/api/users/usernames`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+    }).then(async (response) => {
+        if (response.ok) {
+            const data = await response.json()
+
+            let selectElement = document.getElementById('user-selection')
+
+
+            data.map(value => {
+                const opt = document.createElement('option');
+                opt.value = value;
+                opt.innerHTML = value;
+
+                selectElement.appendChild(opt);
+            })
+
+
+        } else {
+            console.error(response.json())
+        }
+    })
+</script>
+
+<script>
+    document.getElementById('location-selection').addEventListener("click", evt => {
+        switch (evt.target.value) {
+            case "/": {
+                document.getElementById('homepage_img').hidden = false
+                document.getElementById('materials_img').hidden = true
+                break
+            }
+            case "/materials": {
+                document.getElementById('homepage_img').hidden = true
+                document.getElementById('materials_img').hidden = false
+                break
+            }
+        }
+    })
+</script>
+
+<script>
+    document.getElementById('user-selection').addEventListener("click", evt => {
+        fetch(`/api/users/sessions?username=${evt.target.value}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+        }).then(async (response) => {
+            if (response.ok) {
+                const data = await response.json()
+
+                let selectElement = document.getElementById('user-session-selection')
+                selectElement.innerHTML = '';
+
+                data.map(value => {
+                    const opt = document.createElement('option');
+                    opt.value = value;
+                    opt.innerHTML = value;
+
+                    selectElement.appendChild(opt);
+                })
+
+            } else {
+                console.error(response.json())
+            }
+        })
+    })
+</script>
+
+<script>
+    const config = {
+        container: document.getElementById('heatmap_container'),
+        radius: 15,
+        maxOpacity: .25,
+        minOpacity: 0,
+        blur: .75,
+    };
+
+    // create heatmap with configuration
+    let heatmapInstance = h337.create(config);
+    let path = "/materials/3"
+
+    fetch(`/api/monitoring/clicks?location=${path}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+    }).then(async (response) => {
+        if (response.ok) {
+            const data = await response.json()
+
+            heatmapInstance.setData({
+                data: data
+            });
+        } else {
+            console.error(response.json())
+        }
+    })
+</script>
+
+<script>
+    document.getElementById('build_btn').addEventListener("click", evt => {
+        let session = document.getElementById('user-session-selection')
+        let location = document.getElementById('location-selection')
+
+        console.log(session.value, location.value)
+
+        fetch(`/api/monitoring/mouse-path?location=${location.value}&session=${session.value}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+        }).then(async (response) => {
+            if (response.ok) {
+                const data = await response.json()
+
+                console.log(data)
+
+                heatmapInstance.setData({
+                    data: data
+                });
+
+            } else {
+                console.error(response.json())
+            }
+        })
+    })
+</script>
+
+</html>

@@ -36,6 +36,27 @@ class MonitoringDispatcher {
         })
     }
 
+    sendMousePath(path) {
+        fetch('/api/monitoring/mouse-path', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(
+                {
+                    "path": path,
+                    "location": document.location.pathname
+                }
+            )
+        }).then((response) => {
+            if (response.ok) {
+                console.debug("mouse path saved successfully")
+            } else {
+                console.error(response.json())
+            }
+        })
+    }
+
     constructor(userSessionID) {
         this.userSessionID = userSessionID
     }

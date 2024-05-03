@@ -27,8 +27,9 @@ func StartApp(config configs.StaticConfig) {
 
 	eRepo := repo.NewEventsRepo(db)
 	lRepo := repo.NewLessonsRepo(db)
+	uRepo := repo.NewUsersRepo(db)
 
-	router = api.HandleAPI(router, eRepo, lRepo)
+	router = api.HandleAPI(router, eRepo, lRepo, uRepo)
 
 	router.Use(cors.New(cors.Config{
 		AllowOrigins: strings.Split(config.AllowedOrigins, ","),
@@ -53,6 +54,7 @@ func StartApp(config configs.StaticConfig) {
 	}))
 
 	router.Static("/icons", "web/icons")
+	router.Static("/images", "web/images")
 	router.Static("/styles", "web/styles")
 	router.Static("/scripts", "web/scripts")
 
@@ -119,6 +121,10 @@ func StartApp(config configs.StaticConfig) {
 		c.HTML(http.StatusOK, "profiles.tmpl", gin.H{})
 	})
 
+	group.GET("/heatmap", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "heatmap.tmpl", gin.H{})
+	})
+
 	host := net.JoinHostPort(config.Host, config.Port)
 
 	slog.Info(fmt.Sprintf("staring server on: http://%s", host))
@@ -136,7 +142,7 @@ func prepareDatabaseConnection(host, user, password, name, timezone string) *gor
 		panic("failed to connect database")
 	}
 
-	err = db.AutoMigrate(&entities.Comment{}, &entities.Lesson{}, &entities.Event{})
+	err = db.AutoMigrate(&entities.Comment{}, &entities.Lesson{}, &entities.Event{}, &entities.MousePath{})
 	if err != nil {
 		panic("failed to migrate schema")
 	}

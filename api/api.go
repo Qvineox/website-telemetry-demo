@@ -12,7 +12,7 @@ import (
 	"website-telemetry-demo/cmd/app/repo"
 )
 
-func HandleAPI(router *gin.Engine, e repo.EventsRepo, l repo.LessonsRepo) *gin.Engine {
+func HandleAPI(router *gin.Engine, e repo.EventsRepo, l repo.LessonsRepo, u repo.UsersRepo) *gin.Engine {
 	insecure := router.Group("/api")
 
 	insecure.GET("/ping", func(c *gin.Context) {
@@ -65,6 +65,40 @@ func HandleAPI(router *gin.Engine, e repo.EventsRepo, l repo.LessonsRepo) *gin.E
 	})
 
 	{
+		usersGroup := api.Group("/users")
+
+		usersGroup.GET("/usernames", func(c *gin.Context) {
+			users, err := u.GetAllUsernames()
+			if err != nil {
+				slog.Warn(err.Error())
+				c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+				return
+			}
+
+			c.JSON(http.StatusOK, users)
+		})
+
+		usersGroup.GET("/sessions", func(c *gin.Context) {
+			var payload sessionPayload
+
+			err := c.ShouldBindQuery(&payload)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+
+			clicks, err := u.GetUsernameSessions(payload.Username)
+			if err != nil {
+				slog.Warn(err.Error())
+				c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+				return
+			}
+
+			c.JSON(http.StatusOK, clicks)
+		})
+	}
+
+	{
 		monitoringGroup := api.Group("/monitoring")
 
 		monitoringGroup.POST("/event", func(c *gin.Context) {
@@ -84,9 +118,86 @@ func HandleAPI(router *gin.Engine, e repo.EventsRepo, l repo.LessonsRepo) *gin.E
 			err = e.SaveEvent(payload)
 			if err != nil {
 				slog.Warn(err.Error())
+				c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+				return
 			}
 
 			slog.Info(fmt.Sprintf("registered event: %s", payload.String()))
+			c.Status(http.StatusOK)
+			return
+		})
+		monitoringGroup.POST("/mouse-path", func(c *gin.Context) {
+			var payload entities.MousePath
+
+			err := c.ShouldBindJSON(&payload)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+
+			payload.Timestamp = time.Now()
+			payload.SessionUUID = c.GetString("user_session_token")
+			payload.Username = c.GetString("user_name")
+			payload.SourceIP = c.ClientIP()
+
+			err = e.SaveMousePath(payload)
+			if err != nil {
+				slog.Warn(err.Error())
+				c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+				return
+			}
+
+			c.Status(http.StatusOK)
+			return
+		})
+
+		monitoringGroup.GET("/clicks", func(c *gin.Context) {
+			var payload heatmapPayload
+
+			err := c.ShouldBindQuery(&payload)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+
+			clicks, err := e.GetClicksByFilter(50000, payload.Location)
+			if err != nil {
+				slog.Warn(err.Error())
+				c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+				return
+			}
+
+			c.JSON(http.StatusOK, clicks)
+		})
+		monitoringGroup.GET("/mouse-path", func(c *gin.Context) {
+			var payload pathPayload
+
+			err := c.ShouldBindQuery(&payload)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+				return
+			}
+
+			paths, err := e.GetPathByFilter(payload.Session, payload.Location)
+			if err != nil {
+				slog.Warn(err.Error())
+				c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+				return
+			}
+
+			var clicks = make([]entities.ClickData, 0)
+
+			for _, path := range paths {
+				for _, pos := range path.Path {
+					clicks = append(clicks, entities.ClickData{
+						X:     int(pos[0]),
+						Y:     int(pos[1]),
+						Value: 1,
+					})
+				}
+			}
+
+			c.JSON(http.StatusOK, clicks)
 		})
 	}
 
@@ -159,4 +270,17 @@ func HandleAPI(router *gin.Engine, e repo.EventsRepo, l repo.LessonsRepo) *gin.E
 type authPayload struct {
 	Username string `json:"username" binding:"required"`
 	Password string `json:"password" binding:"required"`
+}
+
+type heatmapPayload struct {
+	Location string `form:"location" binding:"required"`
+}
+
+type pathPayload struct {
+	Location string `form:"location" binding:"required"`
+	Session  string `form:"session" binding:"required"`
+}
+
+type sessionPayload struct {
+	Username string `form:"username" binding:"required"`
 }

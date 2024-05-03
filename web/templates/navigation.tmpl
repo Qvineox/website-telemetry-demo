@@ -24,11 +24,18 @@
     <a href="/materials" onclick="navigationEvent(event,'/materials')" class="nav-link">Материалы</a>
     {{end}}
 
+    {{if "heatmap" }}
+    <a href="/heatmap" onclick="navigationEvent(event,'/heatmap')" class="nav-link__selected">Карта</a>
+    {{else}}
+    <a href="/heatmap" onclick="navigationEvent(event,'/heatmap')" class="nav-link">Карта</a>
+    {{end}}
+
     {{if "profiles" }}
     <a href="/profiles" onclick="navigationEvent(event,'/profiles')" class="nav-link__selected">Профили</a>
     {{else}}
     <a href="/profiles" onclick="navigationEvent(event,'/profiles')" class="nav-link">Профили</a>
     {{end}}
+
 </nav>
 
 
